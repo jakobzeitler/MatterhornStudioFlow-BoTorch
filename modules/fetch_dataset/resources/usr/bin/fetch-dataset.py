@@ -18,13 +18,15 @@ if __name__ == '__main__':
     from MHSapi.MHSapi import MHSapiClient
     client = MHSapiClient(token=args.token, dev=True)
     projects = client.experiments_list()
-    project = [p for p in projects if p.id == args.project_id]
+    project = [p for p in projects if int(p.id) == int(args.project_id)][0]
 
     # 2. Download dataset
     dataset = client.experiment_data(project)
+    print("Data")
+    print(dataset)
 
     # 3. Save data
-    dataset.frame.to_csv(args.data, sep='\t')
+    dataset.to_csv(args.data, sep='\t')
 
     # save metadata
     meta = {

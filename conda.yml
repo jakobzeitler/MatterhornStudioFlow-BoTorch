@@ -9,4 +9,4 @@ dependencies:
   - scikit-learn
   - pip
   - pip:
-      - -e /Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MHSapi/MHSapi/
+      - -e /Users/jakobzeitler/MatterhornStudioLocalDev/MHSapi/MHSapi
