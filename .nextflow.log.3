@@ -1,0 +1,95 @@
+Aug-29 20:44:04.641 [main] DEBUG nextflow.cli.Launcher - $> nextflow run . -profile conda --project_id 139 --token 67031c6300625373a5a3a0f4576c64592adf1da577a74bf10c8c4ff1315c91e9
+Aug-29 20:44:04.694 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.04.3
+Aug-29 20:44:04.704 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/jakobzeitler/.nextflow/plugins; core-plugins: nf-amazon@1.16.2,nf-azure@1.0.1,nf-codecommit@0.1.4,nf-console@1.0.5,nf-ga4gh@1.0.5,nf-google@1.7.3,nf-tower@1.5.12,nf-wave@0.8.4
+Aug-29 20:44:04.711 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Aug-29 20:44:04.711 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Aug-29 20:44:04.713 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Aug-29 20:44:04.718 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Aug-29 20:44:05.042 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/nextflow.config
+Aug-29 20:44:05.043 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/nextflow.config
+Aug-29 20:44:05.050 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `conda`
+Aug-29 20:44:05.086 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [slurm, conda, wave]
+Aug-29 20:44:05.104 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Aug-29 20:44:05.113 [main] INFO  nextflow.cli.CmdRun - Launching `./main.nf` [sharp_dalembert] DSL2 - revision: 5de33912eb
+Aug-29 20:44:05.113 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Aug-29 20:44:05.113 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Aug-29 20:44:05.120 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /Users/jakobzeitler/.nextflow/secrets/store.json
+Aug-29 20:44:05.123 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@6535117e] - activable => nextflow.secret.LocalSecretsProvider@6535117e
+Aug-29 20:44:05.161 [main] DEBUG nextflow.Session - Session UUID: aca7b286-8250-4ae5-9fdf-0a6b0b35b061
+Aug-29 20:44:05.161 [main] DEBUG nextflow.Session - Run name: sharp_dalembert
+Aug-29 20:44:05.161 [main] DEBUG nextflow.Session - Executor pool size: 10
+Aug-29 20:44:05.168 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=30; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Aug-29 20:44:05.182 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.04.3 build 5875
+  Created: 11-08-2023 18:37 UTC (19:37 BST)
+  System: Mac OS X 13.0.1
+  Runtime: Groovy 3.0.16 on OpenJDK 64-Bit Server VM 20.0.1
+  Encoding: UTF-8 (UTF-8)
+  Process: 11098@Jakobs-MacBook-Pro.local [192.168.1.15]
+  CPUs: 10 - Mem: 32 GB (2.6 GB) - Swap: 0 (0)
+Aug-29 20:44:05.191 [main] DEBUG nextflow.Session - Work-dir: /Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/work [Mac OS X]
+Aug-29 20:44:05.191 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/bin
+Aug-29 20:44:05.201 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Aug-29 20:44:05.207 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Aug-29 20:44:05.220 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Aug-29 20:44:05.226 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 11; maxThreads: 1000
+Aug-29 20:44:05.259 [main] DEBUG nextflow.Session - Session start
+Aug-29 20:44:05.371 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Aug-29 20:44:05.594 [main] INFO  nextflow.Nextflow - 
+    M L - H Y P E R O P T   P I P E L I N E
+    =======================================
+    fetch_dataset   : true
+    token           : 67031c6300625373a5a3a0f4576c64592adf1da577a74bf10c8c4ff1315c91e9
+    project_id    : 139
+
+    outdir          : results
+    
+Aug-29 20:44:05.644 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Aug-29 20:44:05.645 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Aug-29 20:44:05.648 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Aug-29 20:44:05.651 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=10; memory=32 GB; capacity=10; pollInterval=100ms; dumpInterval=5m
+Aug-29 20:44:05.706 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: split_train_test, fetch_dataset, visualize, predict, train
+Aug-29 20:44:05.707 [main] DEBUG nextflow.Session - Igniting dataflow network (1)
+Aug-29 20:44:05.707 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > fetch_dataset
+Aug-29 20:44:05.707 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Aug-29 20:44:05.707 [main] DEBUG nextflow.Session - Session await
+Aug-29 20:44:05.760 [Actor Thread 5] DEBUG nextflow.conda.CondaCache - conda found local env for environment=/Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/conda.yml; path=/Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/work/conda/MSFlow-BoTorch-5067d499eb3565cb389c0b13e934c4f5
+Aug-29 20:44:05.804 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-29 20:44:05.805 [Task submitter] INFO  nextflow.Session - [25/016f41] Submitted process > fetch_dataset (139)
+Aug-29 20:44:06.630 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: fetch_dataset (139); status: COMPLETED; exit: 1; error: -; workDir: /Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/work/25/016f414dc2277acdf096e3fef38d71]
+Aug-29 20:44:06.632 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=fetch_dataset (139); work-dir=/Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/work/25/016f414dc2277acdf096e3fef38d71
+  error [nextflow.exception.ProcessFailedException]: Process `fetch_dataset (139)` terminated with an error exit status (1)
+Aug-29 20:44:06.639 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'fetch_dataset (139)'
+
+Caused by:
+  Process `fetch_dataset (139)` terminated with an error exit status (1)
+
+Command executed:
+
+  fetch-dataset.py --project_id 139 --token 67031c6300625373a5a3a0f4576c64592adf1da577a74bf10c8c4ff1315c91e9
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  Traceback (most recent call last):
+    File "/Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/modules/fetch_dataset/resources/usr/bin/fetch-dataset.py", line 18, in <module>
+      from MHSapi.MHSapi import MHSapiClient
+  ModuleNotFoundError: No module named 'MHSapi'
+
+Work dir:
+  /Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/work/25/016f414dc2277acdf096e3fef38d71
+
+Tip: you can replicate the issue by changing to the process work dir and entering the command `bash .command.run`
+Aug-29 20:44:06.642 [main] DEBUG nextflow.Session - Session await > all processes finished
+Aug-29 20:44:06.647 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `fetch_dataset (139)` terminated with an error exit status (1)
+Aug-29 20:44:06.655 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Aug-29 20:44:06.656 [main] INFO  nextflow.Nextflow - 
+Oops .. something went wrong
+Aug-29 20:44:06.658 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=1; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=766ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=0; ]
+Aug-29 20:44:06.854 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Aug-29 20:44:06.867 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

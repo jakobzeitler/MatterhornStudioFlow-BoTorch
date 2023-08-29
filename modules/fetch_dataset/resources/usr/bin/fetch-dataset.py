@@ -2,49 +2,33 @@
 
 import argparse
 import json
-from sklearn.datasets import fetch_openml
-
-
-def is_categorical(y):
-    return y.dtype.kind in 'OSUV'
-
-
-def get_categories(df):
-    result = {}
-    for c in df.columns:
-        if is_categorical(df[c]):
-            values = df[c].unique().tolist()
-
-            # fix bug with numerical categories
-            if sum(v.isdigit() for v in values) == len(values):
-                values = [int(v) for v in values]
-
-            result[c] = values
-
-    return result
-
+import pandas as pd
 
 if __name__ == '__main__':
     # parse command-line arguments
     parser = argparse.ArgumentParser(description='Download an OpenML dataset')
-    parser.add_argument('--name', help='dataset name', required=True)
+    parser.add_argument('--token', help='token', required=True)
+    parser.add_argument('--project_id', help='project id', required=True)
     parser.add_argument('--data', help='data file', default='data.txt')
     parser.add_argument('--meta', help='metadata file', default='meta.json')
 
     args = parser.parse_args()
 
-    # download dataset from openml
-    dataset = fetch_openml(args.name, as_frame=True)
+    # 1. Initialise API client
+    from MHSapi.MHSapi import MHSapiClient
+    client = MHSapiClient(token=args.token, dev=True)
+    projects = client.experiments_list()
+    project = [p for p in projects if p.id == args.project_id]
 
-    # save data
+    # 2. Download dataset
+    dataset = client.experiment_data(project)
+
+    # 3. Save data
     dataset.frame.to_csv(args.data, sep='\t')
 
     # save metadata
     meta = {
-        'name': args.name,
-        'feature_names': dataset.feature_names,
-        'target_names': dataset.target_names,
-        'categories': get_categories(dataset.frame) 
+        'project_id': args.project_id,
     }
 
     with open(args.meta, 'w') as f:

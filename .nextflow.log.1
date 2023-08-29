@@ -1,0 +1,318 @@
+Aug-29 20:50:45.453 [main] DEBUG nextflow.cli.Launcher - $> nextflow run . -profile conda --project_id 139 --token 67031c6300625373a5a3a0f4576c64592adf1da577a74bf10c8c4ff1315c91e9
+Aug-29 20:50:45.505 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.04.3
+Aug-29 20:50:45.516 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/jakobzeitler/.nextflow/plugins; core-plugins: nf-amazon@1.16.2,nf-azure@1.0.1,nf-codecommit@0.1.4,nf-console@1.0.5,nf-ga4gh@1.0.5,nf-google@1.7.3,nf-tower@1.5.12,nf-wave@0.8.4
+Aug-29 20:50:45.521 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Aug-29 20:50:45.522 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Aug-29 20:50:45.524 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Aug-29 20:50:45.530 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Aug-29 20:50:45.860 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/nextflow.config
+Aug-29 20:50:45.860 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/nextflow.config
+Aug-29 20:50:45.868 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `conda`
+Aug-29 20:50:45.902 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [slurm, conda, wave]
+Aug-29 20:50:45.917 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Aug-29 20:50:45.926 [main] INFO  nextflow.cli.CmdRun - Launching `./main.nf` [boring_dijkstra] DSL2 - revision: 5de33912eb
+Aug-29 20:50:45.927 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Aug-29 20:50:45.927 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Aug-29 20:50:45.932 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /Users/jakobzeitler/.nextflow/secrets/store.json
+Aug-29 20:50:45.934 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@6535117e] - activable => nextflow.secret.LocalSecretsProvider@6535117e
+Aug-29 20:50:45.972 [main] DEBUG nextflow.Session - Session UUID: 526c8552-3a9a-4c92-ae36-aa0c9d096356
+Aug-29 20:50:45.973 [main] DEBUG nextflow.Session - Run name: boring_dijkstra
+Aug-29 20:50:45.973 [main] DEBUG nextflow.Session - Executor pool size: 10
+Aug-29 20:50:45.979 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=30; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Aug-29 20:50:45.992 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.04.3 build 5875
+  Created: 11-08-2023 18:37 UTC (19:37 BST)
+  System: Mac OS X 13.0.1
+  Runtime: Groovy 3.0.16 on OpenJDK 64-Bit Server VM 20.0.1
+  Encoding: UTF-8 (UTF-8)
+  Process: 11926@Jakobs-MacBook-Pro.local [127.0.0.1]
+  CPUs: 10 - Mem: 32 GB (1.8 GB) - Swap: 0 (0)
+Aug-29 20:50:46.000 [main] DEBUG nextflow.Session - Work-dir: /Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/work [Mac OS X]
+Aug-29 20:50:46.000 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/bin
+Aug-29 20:50:46.009 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Aug-29 20:50:46.014 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Aug-29 20:50:46.026 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Aug-29 20:50:46.032 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 11; maxThreads: 1000
+Aug-29 20:50:46.073 [main] DEBUG nextflow.Session - Session start
+Aug-29 20:50:46.180 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Aug-29 20:50:46.400 [main] INFO  nextflow.Nextflow - 
+    M L - H Y P E R O P T   P I P E L I N E
+    =======================================
+    fetch_dataset   : true
+    token           : 67031c6300625373a5a3a0f4576c64592adf1da577a74bf10c8c4ff1315c91e9
+    project_id    : 139
+
+    outdir          : results
+    
+Aug-29 20:50:46.453 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Aug-29 20:50:46.453 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Aug-29 20:50:46.457 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Aug-29 20:50:46.460 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=10; memory=32 GB; capacity=10; pollInterval=100ms; dumpInterval=5m
+Aug-29 20:50:46.516 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: split_train_test, fetch_dataset, visualize, predict, train
+Aug-29 20:50:46.517 [main] DEBUG nextflow.Session - Igniting dataflow network (1)
+Aug-29 20:50:46.517 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > fetch_dataset
+Aug-29 20:50:46.517 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Aug-29 20:50:46.517 [main] DEBUG nextflow.Session - Session await
+Aug-29 20:50:46.573 [Actor Thread 5] INFO  nextflow.conda.CondaCache - Creating env using conda: /Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/conda.yml [cache /Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/work/conda/MSFlow-BoTorch-d0aa73ff8863301914028c2d895e8b67]
+Aug-29 20:52:02.919 [Actor Thread 3] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=fetch_dataset; work-dir=null
+  error [java.lang.IllegalStateException]: java.lang.IllegalStateException: Failed to create Conda environment
+  command: conda env create --prefix /Users/jakobzeitler/Library/Mobile\ Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/work/conda/MSFlow-BoTorch-d0aa73ff8863301914028c2d895e8b67 --file /Users/jakobzeitler/Library/Mobile\ Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/conda.yml
+  status : 1
+  message:
+    WARNING: A space was detected in your requested environment path:
+    '/Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/work/conda/MSFlow-BoTorch-d0aa73ff8863301914028c2d895e8b67'
+    Spaces in paths can sometimes be problematic. To minimize issues,
+    make sure you activate your environment before running any executables!
+    
+    
+    
+    ==> WARNING: A newer version of conda exists. <==
+      current version: 23.7.2
+      latest version: 23.7.3
+    
+    Please update conda by running
+    
+        $ conda update -n base -c conda-forge conda
+    
+    Or to minimize the number of packages updated during conda update use
+    
+         conda install conda=23.7.3
+    
+    
+    Pip subprocess error:
+    ERROR: file:///Users/jakobzeitler/Library/Mobile (from -r /Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/condaenv.sh82jf6e.requirements.txt (line 1)) does not appear to be a Python project: neither 'setup.py' nor 'pyproject.toml' found.
+    
+    
+    CondaEnvException: Pip failed
+
+Aug-29 20:52:02.929 [Actor Thread 3] ERROR nextflow.processor.TaskProcessor - Error executing process > 'fetch_dataset'
+
+Caused by:
+  Failed to create Conda environment
+  command: conda env create --prefix /Users/jakobzeitler/Library/Mobile\ Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/work/conda/MSFlow-BoTorch-d0aa73ff8863301914028c2d895e8b67 --file /Users/jakobzeitler/Library/Mobile\ Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/conda.yml
+  status : 1
+  message:
+    WARNING: A space was detected in your requested environment path:
+    '/Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/work/conda/MSFlow-BoTorch-d0aa73ff8863301914028c2d895e8b67'
+    Spaces in paths can sometimes be problematic. To minimize issues,
+    make sure you activate your environment before running any executables!
+    
+    
+    
+    ==> WARNING: A newer version of conda exists. <==
+      current version: 23.7.2
+      latest version: 23.7.3
+    
+    Please update conda by running
+    
+        $ conda update -n base -c conda-forge conda
+    
+    Or to minimize the number of packages updated during conda update use
+    
+         conda install conda=23.7.3
+    
+    
+    Pip subprocess error:
+    ERROR: file:///Users/jakobzeitler/Library/Mobile (from -r /Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/condaenv.sh82jf6e.requirements.txt (line 1)) does not appear to be a Python project: neither 'setup.py' nor 'pyproject.toml' found.
+    
+    
+    CondaEnvException: Pip failed
+
+
+java.lang.IllegalStateException: java.lang.IllegalStateException: Failed to create Conda environment
+  command: conda env create --prefix /Users/jakobzeitler/Library/Mobile\ Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/work/conda/MSFlow-BoTorch-d0aa73ff8863301914028c2d895e8b67 --file /Users/jakobzeitler/Library/Mobile\ Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/conda.yml
+  status : 1
+  message:
+    WARNING: A space was detected in your requested environment path:
+    '/Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/work/conda/MSFlow-BoTorch-d0aa73ff8863301914028c2d895e8b67'
+    Spaces in paths can sometimes be problematic. To minimize issues,
+    make sure you activate your environment before running any executables!
+    
+    
+    
+    ==> WARNING: A newer version of conda exists. <==
+      current version: 23.7.2
+      latest version: 23.7.3
+    
+    Please update conda by running
+    
+        $ conda update -n base -c conda-forge conda
+    
+    Or to minimize the number of packages updated during conda update use
+    
+         conda install conda=23.7.3
+    
+    
+    Pip subprocess error:
+    ERROR: file:///Users/jakobzeitler/Library/Mobile (from -r /Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/condaenv.sh82jf6e.requirements.txt (line 1)) does not appear to be a Python project: neither 'setup.py' nor 'pyproject.toml' found.
+    
+    
+    CondaEnvException: Pip failed
+
+	at nextflow.conda.CondaCache.getCachePathFor(CondaCache.groovy:378)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSite.invoke(PogoMetaMethodSite.java:166)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.call(PogoMetaMethodSite.java:69)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at nextflow.processor.TaskRun.getCondaEnv0(TaskRun.groovy:596)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:362)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:176)
+	at nextflow.processor.TaskRun$_getCondaEnv_closure5.doCall(TaskRun.groovy:588)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:274)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at org.codehaus.groovy.runtime.ConvertedClosure.invokeCustom(ConvertedClosure.java:50)
+	at org.codehaus.groovy.runtime.ConversionHandler.invoke(ConversionHandler.java:112)
+	at jdk.proxy1/jdk.proxy1.$Proxy29.apply(Unknown Source)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap.invoke(PojoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:51)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:148)
+	at nextflow.processor.TaskRun.getCondaEnv(TaskRun.groovy:588)
+	at nextflow.processor.TaskRun$getCondaEnv$5.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:130)
+	at nextflow.processor.TaskProcessor.createTaskHashKey(TaskProcessor.groovy:2097)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:189)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:57)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at nextflow.processor.TaskProcessor.invokeTask(TaskProcessor.groovy:617)
+	at nextflow.processor.InvokeTaskAdapter.call(InvokeTaskAdapter.groovy:52)
+	at groovyx.gpars.dataflow.operator.DataflowOperatorActor.startTask(DataflowOperatorActor.java:120)
+	at groovyx.gpars.dataflow.operator.ForkingDataflowOperatorActor.access$001(ForkingDataflowOperatorActor.java:35)
+	at groovyx.gpars.dataflow.operator.ForkingDataflowOperatorActor$1.run(ForkingDataflowOperatorActor.java:58)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+Caused by: java.lang.IllegalStateException: Failed to create Conda environment
+  command: conda env create --prefix /Users/jakobzeitler/Library/Mobile\ Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/work/conda/MSFlow-BoTorch-d0aa73ff8863301914028c2d895e8b67 --file /Users/jakobzeitler/Library/Mobile\ Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/conda.yml
+  status : 1
+  message:
+    WARNING: A space was detected in your requested environment path:
+    '/Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/work/conda/MSFlow-BoTorch-d0aa73ff8863301914028c2d895e8b67'
+    Spaces in paths can sometimes be problematic. To minimize issues,
+    make sure you activate your environment before running any executables!
+    
+    
+    
+    ==> WARNING: A newer version of conda exists. <==
+      current version: 23.7.2
+      latest version: 23.7.3
+    
+    Please update conda by running
+    
+        $ conda update -n base -c conda-forge conda
+    
+    Or to minimize the number of packages updated during conda update use
+    
+         conda install conda=23.7.3
+    
+    
+    Pip subprocess error:
+    ERROR: file:///Users/jakobzeitler/Library/Mobile (from -r /Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/condaenv.sh82jf6e.requirements.txt (line 1)) does not appear to be a Python project: neither 'setup.py' nor 'pyproject.toml' found.
+    
+    
+    CondaEnvException: Pip failed
+
+	at nextflow.conda.CondaCache.runCommand(CondaCache.groovy:327)
+	at nextflow.conda.CondaCache.createLocalCondaEnv0(CondaCache.groovy:299)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1258)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:1036)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:1019)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:97)
+	at nextflow.conda.CondaCache$_createLocalCondaEnv_closure1.doCall(CondaCache.groovy:256)
+	at nextflow.conda.CondaCache$_createLocalCondaEnv_closure1.call(CondaCache.groovy)
+	at nextflow.file.FileMutex.lock(FileMutex.groovy:106)
+	at nextflow.conda.CondaCache.createLocalCondaEnv(CondaCache.groovy:256)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1258)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:1036)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:1019)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:97)
+	at nextflow.conda.CondaCache$_getLazyImagePath_closure3.doCall(CondaCache.groovy:355)
+	at nextflow.conda.CondaCache$_getLazyImagePath_closure3.call(CondaCache.groovy)
+	at groovyx.gpars.dataflow.LazyDataflowVariable$1.run(LazyDataflowVariable.java:70)
+	... 3 common frames omitted
+Aug-29 20:52:02.932 [Actor Thread 3] DEBUG nextflow.Session - Session aborted -- Cause: java.lang.IllegalStateException: Failed to create Conda environment
+  command: conda env create --prefix /Users/jakobzeitler/Library/Mobile\ Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/work/conda/MSFlow-BoTorch-d0aa73ff8863301914028c2d895e8b67 --file /Users/jakobzeitler/Library/Mobile\ Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/conda.yml
+  status : 1
+  message:
+    WARNING: A space was detected in your requested environment path:
+    '/Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/work/conda/MSFlow-BoTorch-d0aa73ff8863301914028c2d895e8b67'
+    Spaces in paths can sometimes be problematic. To minimize issues,
+    make sure you activate your environment before running any executables!
+    
+    
+    
+    ==> WARNING: A newer version of conda exists. <==
+      current version: 23.7.2
+      latest version: 23.7.3
+    
+    Please update conda by running
+    
+        $ conda update -n base -c conda-forge conda
+    
+    Or to minimize the number of packages updated during conda update use
+    
+         conda install conda=23.7.3
+    
+    
+    Pip subprocess error:
+    ERROR: file:///Users/jakobzeitler/Library/Mobile (from -r /Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MatterhornStudioFlow/MatterhornStudioFlow-BoTorch/condaenv.sh82jf6e.requirements.txt (line 1)) does not appear to be a Python project: neither 'setup.py' nor 'pyproject.toml' found.
+    
+    
+    CondaEnvException: Pip failed
+
+Aug-29 20:52:02.944 [Actor Thread 3] DEBUG nextflow.Session - The following nodes are still active:
+[process] fetch_dataset
+  status=ACTIVE
+  port 0: (value) bound ; channel: project_id
+  port 1: (value) bound ; channel: token
+  port 2: (cntrl) -     ; channel: $
+
+Aug-29 20:52:02.946 [main] DEBUG nextflow.Session - Session await > all processes finished
+Aug-29 20:52:02.946 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Aug-29 20:52:02.946 [Actor Thread 1] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=fetch_dataset; work-dir=null
+  error [java.lang.InterruptedException]: java.lang.InterruptedException
+Aug-29 20:52:02.947 [main] INFO  nextflow.Nextflow - 
+Oops .. something went wrong
+Aug-29 20:52:02.949 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+Aug-29 20:52:03.146 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Aug-29 20:52:03.156 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

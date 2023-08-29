@@ -1,9 +1,12 @@
-name: hyperopt
+name: MSFlow-BoTorch
 channels:
   - defaults
 dependencies:
-  - matplotlib
+  - botorch
   - numpy
   - pandas
   - python=3.10
   - scikit-learn
+  - pip
+  - pip:
+      - -e /Users/jakobzeitler/Library/Mobile Documents/com~apple~CloudDocs/CausalMinds/Projects/MHSapi/MHSapi/
