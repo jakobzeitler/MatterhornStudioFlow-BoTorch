@@ -1,0 +1,6 @@
+.nextflow/
+work/
+*.log
+.nextflow/cache/0c941ad6-b71a-45ee-aaf8-0f91ef67b1de/db/CURRENT
+.nextflow/cache/0c941ad6-b71a-45ee-aaf8-0f91ef67b1de/db/LOCK
+.nextflow.log.1

@@ -24,6 +24,7 @@ log.info """
     M L - H Y P E R O P T   P I P E L I N E
     =======================================
     fetch_dataset   : ${params.fetch_dataset}
+    base_url  : ${params.base_url}
     token           : ${params.token}
     project_id    : ${params.project_id}
 
@@ -37,7 +38,7 @@ log.info """
 workflow {
     // fetch dataset if specified
     if ( params.fetch_dataset == true ) {
-        dataset = fetch_dataset(params.project_id, params.token)
+        dataset = fetch_dataset(params.project_id, params.token, params.base_url)
 
     }
 

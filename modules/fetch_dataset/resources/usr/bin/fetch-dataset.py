@@ -8,6 +8,7 @@ if __name__ == '__main__':
     # parse command-line arguments
     parser = argparse.ArgumentParser(description='Download an OpenML dataset')
     parser.add_argument('--token', help='token', required=True)
+    parser.add_argument('--base_url', help='base url', required=True)
     parser.add_argument('--project_id', help='project id', required=True)
     parser.add_argument('--data', help='data file', default='data.txt')
     parser.add_argument('--meta', help='metadata file', default='meta.json')
@@ -16,7 +17,7 @@ if __name__ == '__main__':
 
     # 1. Initialise API client
     from MHSapi.MHSapi import MHSapiClient
-    client = MHSapiClient(token=args.token, dev=True)
+    client = MHSapiClient(token=args.token, dev=True, base_url=args.base_url)
     projects = client.experiments_list()
     project = [p for p in projects if int(p.id) == int(args.project_id)][0]
 
