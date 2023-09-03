@@ -32,6 +32,7 @@ if __name__ == '__main__':
     # save metadata
     meta = {
         'project_id': args.project_id,
+        'base_url':client.get_base_url()
     }
 
     with open(args.meta, 'w') as f:

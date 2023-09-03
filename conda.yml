@@ -9,4 +9,5 @@ dependencies:
   - scikit-learn
   - pip
   - pip:
-      - git+https://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@github.com/matterhorn-studio/MHSapi.git
+       - git+https://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@github.com/matterhorn-studio/MHSapi.git
+      #- -e /Users/jakobzeitler/MatterhornStudioLocalDev/MHSapi/MHSapi
