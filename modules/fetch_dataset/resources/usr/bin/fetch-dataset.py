@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
     # 1. Initialise API client
     from MHSapi.MHSapi import MHSapiClient
-    client = MHSapiClient(token=args.token, dev=True, base_url=args.base_url)
+    client = MHSapiClient(token=args.token, base_url=args.base_url)
     projects = client.experiments_list()
     project = [p for p in projects if int(p.id) == int(args.project_id)][0]
 
