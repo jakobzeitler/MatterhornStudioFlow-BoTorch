@@ -2,9 +2,9 @@ name: MSFlow-BoTorch
 channels:
   - defaults
 dependencies:
+  - python=3.10
   - numpy
   - pandas
-  - python=3.10
   - pip
   - git
   - pip:
