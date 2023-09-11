@@ -30,7 +30,7 @@ if __name__ == '__main__':
     print(dataset)
 
     # 3. Save data
-    #dataset.to_csv(args.data, sep='\t')
+    dataset.to_csv(args.data, sep='\t')
 
 
     # 4. Do BO
