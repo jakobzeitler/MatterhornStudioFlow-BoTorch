@@ -14,11 +14,6 @@
 import groovy.json.JsonSlurper
 
 include { fetch_dataset } from './modules/fetch_dataset'
-include { split_train_test } from './modules/split_train_test'
-include { visualize } from './modules/visualize'
-include { train } from './modules/train'
-include { predict } from './modules/predict'
-
 
 log.info """
     M L - H Y P E R O P T   P I P E L I N E
