@@ -44,7 +44,7 @@ if __name__ == '__main__':
     from botorch.models.transforms.input import Normalize
     from botorch.models.transforms.outcome import Standardize
 
-    inputs = [p for p in parameters if p.outcome == False]
+    inputs = [p for p in parameters if p.outcome == False and p.timestamp == False]
     outcome = [p for p in parameters if p.outcome == True][0]
     X = dataset[[i.parameter_text for i in inputs]]
     Y = dataset[[outcome.parameter_text]]
