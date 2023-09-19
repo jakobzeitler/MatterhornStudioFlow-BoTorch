@@ -5,6 +5,7 @@ process fetch_dataset {
 
     input:
     val(project_id)
+    val(opt_run_id)
     val(token)
     val(base_url)
 
@@ -13,6 +14,6 @@ process fetch_dataset {
 
     script:
     """
-    fetch-dataset.py --project_id ${project_id} --token ${token} --base_url ${base_url}
+    fetch-dataset.py --project_id ${project_id} --opt_run_id ${opt_run_id} --token ${token} --base_url ${base_url}
     """
 }

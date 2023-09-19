@@ -22,6 +22,7 @@ log.info """
     base_url  : ${params.base_url}
     token           : ${params.token}
     project_id    : ${params.project_id}
+    opt_run_id    : ${params.opt_run_id}
 
     outdir          : ${params.outdir}
     """
@@ -33,7 +34,7 @@ log.info """
 workflow {
     // fetch dataset if specified
     if ( params.fetch_dataset == true ) {
-        dataset = fetch_dataset(params.project_id, params.token, params.base_url)
+        dataset = fetch_dataset(params.project_id, params.opt_run_id, params.token, params.base_url)
 
     }
 
