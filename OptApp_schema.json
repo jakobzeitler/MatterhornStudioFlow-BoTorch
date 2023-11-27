@@ -1,0 +1,22 @@
+{
+  "schema": {
+    "type": "object",
+    "properties": {
+      "batch_size": {
+        "type": "number",
+        "title": "Batch size",
+        "minimum": 1
+      }
+    }
+  },
+  "uischema": {
+    "type": "VerticalLayout",
+    "elements": [
+      {
+        "type": "Control",
+        "scope": "#/properties/batch_size",
+        "label": "How many candidates do you want?"
+      }
+    ]
+  }
+}
