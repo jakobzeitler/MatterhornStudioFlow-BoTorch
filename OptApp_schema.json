@@ -1,22 +1,15 @@
 {
-  "schema": {
-    "type": "object",
-    "properties": {
-      "batch_size": {
-        "type": "number",
-        "title": "Batch size",
-        "minimum": 1
-      }
+  "title": "OptApp Run Options",
+  "type": "object",
+  "required": [
+    "batch_size"
+  ],
+  "properties": {
+    "batch_size": {
+      "type": "integer",
+      "default": 1,
+      "minimum": 1,
+      "maximum": 10000
     }
-  },
-  "uischema": {
-    "type": "VerticalLayout",
-    "elements": [
-      {
-        "type": "Control",
-        "scope": "#/properties/batch_size",
-        "label": "How many candidates do you want?"
-      }
-    ]
   }
 }
