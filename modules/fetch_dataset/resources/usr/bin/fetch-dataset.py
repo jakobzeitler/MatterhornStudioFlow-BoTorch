@@ -18,9 +18,25 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
+    import os
+    print(os.environ['CONDA_DEFAULT_ENV'])
+    import sys
+
+    print(sys.path)
+
     # 1. Initialise API client
+    import MHSapi
     from MHSapi.MHSapi import MHSapiClient
-    client = MHSapiClient(token=args.token, base_url=args.base_url)
+    from importlib.metadata import version
+
+    client = MHSapi.MHSapi.MHSapiClient(token=args.token, base_url=args.base_url)
+    print(version('MHSapi'))
+    print(MHSapi.__file__)
+    print(dir(MHSapi))
+    object_methods = [method_name for method_name in dir(client)
+                      if callable(getattr(client, method_name))]
+    print(object_methods)
+
     projects = client.experiments_list()
     project = [p for p in projects if int(p.id) == int(args.project_id)][0]
     parameters = client.parameters_list(project)
@@ -30,9 +46,12 @@ if __name__ == '__main__':
     print("Data")
     print(dataset)
 
-    # 3. Save data
-    dataset.to_csv(args.data, sep='\t')
+    # 3. Get OptApp options
 
+    opt_runs = client.opt_run_list(project)
+    print(opt_runs)
+    opt_run = [p for p in opt_runs if int(p.id) == int(args.opt_run_id)][0]
+    print(opt_run.run_options)
 
     # 4. Do BO
     import torch

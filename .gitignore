@@ -15,3 +15,4 @@ results/
 .nextflow.log.8
 .nextflow/history
 .nextflow/history
+conda_env/
