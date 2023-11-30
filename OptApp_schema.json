@@ -1,5 +1,5 @@
 {
-  "title": "OptApp Run Options",
+  "title": "Options",
   "type": "object",
   "required": [
     "batch_size"
