@@ -10,7 +10,7 @@ process fetch_dataset {
     val(base_url)
 
     output:
-    tuple val(project_id),  path('meta.json'), emit: datasets
+    tuple val(project_id), emit: datasets
 
     script:
     """

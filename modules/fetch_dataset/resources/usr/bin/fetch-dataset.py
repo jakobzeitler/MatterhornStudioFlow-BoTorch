@@ -130,12 +130,3 @@ if __name__ == '__main__':
 
     print(candidates)
     client.experiment_update_data(project, candidates)
-
-    # save metadata
-    meta = {
-        'project_id': args.project_id,
-        'base_url':client.get_base_url()
-    }
-
-    with open(args.meta, 'w') as f:
-        json.dump(meta, f)
