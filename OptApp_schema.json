@@ -5,7 +5,7 @@
     "batch_size"
   ],
   "properties": {
-    "batch_n": {
+    "batch_size": {
       "type": "integer",
       "default": 1,
       "minimum": 1,
