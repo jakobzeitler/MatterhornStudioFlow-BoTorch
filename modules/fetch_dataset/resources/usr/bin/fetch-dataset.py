@@ -51,7 +51,16 @@ if __name__ == '__main__':
     opt_runs = client.opt_run_list(project)
     print(opt_runs)
     opt_run = [p for p in opt_runs if int(p.id) == int(args.opt_run_id)][0]
-    print(opt_run.run_options)
+    print(opt_run)
+    #type = type(opt_run.run_options)
+    #method_list = [func for func in dir(type) if callable(getattr(type, func))]
+    #print(method_list)
+    import json
+    run_options = json.loads(opt_run.run_options.json())
+
+    batch_size = 1
+    if 'batch_size' in run_options.keys():
+        batch_size = run_options['batch_size']
 
     # 4. Do BO
     import torch
@@ -76,32 +85,51 @@ if __name__ == '__main__':
     print(train_Y)
 
     gp = SingleTaskGP(train_X, train_Y, input_transform=Normalize(d=train_X.shape[-1]), outcome_transform=Standardize(m=train_Y.shape[-1]))
+
     mll = ExactMarginalLogLikelihood(gp.likelihood, gp)
     fit_gpytorch_mll(mll)
 
-    from botorch.acquisition import UpperConfidenceBound
-    UCB = UpperConfidenceBound(gp, beta=0.1)
+    #from botorch.acquisition import UpperConfidenceBound
+    #UCB = UpperConfidenceBound(gp, beta=0.1)
 
     from botorch.optim import optimize_acqf
+
+    from botorch import fit_gpytorch_mll
+    from botorch.acquisition.monte_carlo import (
+        qExpectedImprovement,
+        qNoisyExpectedImprovement,
+    )
+    from botorch.sampling.normal import SobolQMCNormalSampler
+    from botorch.exceptions import BadInitialCandidatesWarning
 
     upper_bounds = torch.tensor([p.upper_bound for p in inputs])
     lower_bounds = torch.tensor([p.lower_bound for p in inputs])
     bounds = torch.stack([lower_bounds, upper_bounds])
-    candidate, acq_value = optimize_acqf(
-        UCB, bounds=bounds, q=1, num_restarts=5, raw_samples=20,
+    print(f"batch_size={batch_size}")
+
+    SMOKE_TEST = False
+    MC_SAMPLES = 256 if not SMOKE_TEST else 32
+    qmc_sampler = SobolQMCNormalSampler(sample_shape=torch.Size([MC_SAMPLES]))
+
+    qNEI = qNoisyExpectedImprovement(
+        model=gp,
+        X_baseline=train_X,
+        sampler=qmc_sampler,
     )
-    candidate  # tensor([0.4887, 0.5063])
-    print(list(candidate[0]))
+    candidates, acq_value = optimize_acqf(
+        acq_function=qNEI, bounds=bounds, q=batch_size, num_restarts=5, raw_samples=20,
+    )
+    candidates  # tensor([0.4887, 0.5063])
+    print("Candidates (raw):")
+    print(candidates.detach())
 
-    new_sample = {}
-    for i, c in enumerate(list(candidate[0])):
-        new_sample[inputs[i].parameter_text] = c.numpy()
+    candidates = pd.DataFrame(candidates.numpy())
+    candidates.columns = [input.parameter_text for input in inputs]
+    candidates[outcome.parameter_text] = np.nan
+    candidates["opt_run_id"] = args.opt_run_id
 
-    new_sample[outcome.parameter_text] = np.nan
-    new_sample["opt_run_id"] = args.opt_run_id
-    new_sample = pd.DataFrame(new_sample, index=[0])
-    print(new_sample)
-    client.experiment_update_data(project, new_sample)
+    print(candidates)
+    client.experiment_update_data(project, candidates)
 
     # save metadata
     meta = {
