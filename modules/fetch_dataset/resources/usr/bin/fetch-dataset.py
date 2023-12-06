@@ -117,7 +117,7 @@ if __name__ == '__main__':
         sampler=qmc_sampler,
     )
     candidates, acq_value = optimize_acqf(
-        acq_function=qNEI, bounds=bounds, q=batch_size, num_restarts=5, raw_samples=20,
+        acq_function=qNEI, bounds=bounds, q=int(batch_size), num_restarts=5, raw_samples=20,
     )
     candidates  # tensor([0.4887, 0.5063])
     print("Candidates (raw):")
